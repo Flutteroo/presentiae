@@ -5,9 +5,9 @@ import 'package:timezone/data/latest_10y.dart' as tzData;
 import 'package:flutter/material.dart';
 
 class DigitalClock extends StatefulWidget {
-  String timeZone;
-  String label;
-  DigitalClock({Key? key, required this.timeZone, required this.label})
+  final String timeZone;
+  final String label;
+  const DigitalClock({Key? key, required this.timeZone, required this.label})
       : super(key: key);
 
   @override
@@ -49,7 +49,7 @@ class DigitalClockState extends State<DigitalClock> {
       style: TextStyle(
         fontFamily: 'ShareTechMono',
         fontSize: 15.0,
-        color: Colors.green.withOpacity(0.8),
+        color: Colors.green.withAlpha(204),
       ),
     );
   }
