@@ -1,94 +1,15 @@
 
 ## 1.9.19, v1 app completely refreshed to v2, 2025-09-18 04:30:39, 09e6304
-.gitignore
-TODO.md
-android/app/build.gradle
-android/build.gradle
-bin/commit.sh
-bin/release.sh
-ios/Flutter/AppFrameworkInfo.plist
-ios/Podfile
-ios/Podfile.lock
-ios/Runner.xcodeproj/project.pbxproj
-ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
-ios/Runner/AppDelegate.swift
-ios/Runner/Info.plist
-lib/ball.dart
-lib/digital_clock.dart
-lib/led_indicator.dart
-lib/main.dart
-lib/physics_config.dart
-linux/.gitignore
-linux/CMakeLists.txt
-linux/flutter/CMakeLists.txt
-linux/flutter/generated_plugin_registrant.cc
-linux/flutter/generated_plugin_registrant.h
-linux/flutter/generated_plugins.cmake
-linux/main.cc
-linux/my_application.cc
-linux/my_application.h
-macos/.gitignore
-macos/Flutter/Flutter-Debug.xcconfig
-macos/Flutter/Flutter-Release.xcconfig
-macos/Flutter/GeneratedPluginRegistrant.swift
-macos/Podfile
-macos/Runner.xcodeproj/project.pbxproj
-macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
-macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
-macos/Runner.xcworkspace/contents.xcworkspacedata
-macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
-macos/Runner/AppDelegate.swift
-macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
-macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png
-macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png
-macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png
-macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png
-macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png
-macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png
-macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png
-macos/Runner/Base.lproj/MainMenu.xib
-macos/Runner/Configs/AppInfo.xcconfig
-macos/Runner/Configs/Debug.xcconfig
-macos/Runner/Configs/Release.xcconfig
-macos/Runner/Configs/Warnings.xcconfig
-macos/Runner/DebugProfile.entitlements
-macos/Runner/Info.plist
-macos/Runner/MainFlutterWindow.swift
-macos/Runner/Release.entitlements
-pubspec.lock
-pubspec.yaml
-sandbox/painter.md
-web/favicon.png
-web/icons/Icon-192.png
-web/icons/Icon-512.png
-web/icons/Icon-maskable-192.png
-web/icons/Icon-maskable-512.png
-web/index.html
-web/manifest.json
-windows/.gitignore
-windows/CMakeLists.txt
-windows/flutter/CMakeLists.txt
-windows/flutter/generated_plugin_registrant.cc
-windows/flutter/generated_plugin_registrant.h
-windows/flutter/generated_plugins.cmake
-windows/runner/CMakeLists.txt
-windows/runner/Runner.rc
-windows/runner/flutter_window.cpp
-windows/runner/flutter_window.h
-windows/runner/main.cpp
-windows/runner/resource.h
-windows/runner/resources/app_icon.ico
-windows/runner/runner.exe.manifest
-windows/runner/utils.cpp
-windows/runner/utils.h
-windows/runner/win32_window.cpp
-windows/runner/win32_window.h
+- `lib/physics_config.dart`: Introduced adaptive physics parameters (added maxSpeed & bounceAngleVariation) enabling downstream normalization and controlled randomness; factory defaults tuned for energetic motion (friction 0.990, wallBounciness 3.2) plus non-deterministic bounce injection (±10°).
+- `lib/ball.dart`: Added real-time telemetry pipeline (distance, speed, impact force, dynamic bounciness, rawPixelSpeed) with exponential smoothing (α=0.1) and adaptive max speed tracking; implemented stochastic post-collision vector perturbation honoring configurable bounceAngleVariation; migrated painter to speed-aware color mapping (shared thresholds with LED indicator) for coherent UX; added calibration reset hook.
+- `lib/led_indicator.dart`: Abstracted generic, orientation-agnostic segmented display with threshold-driven color progression (0.4/0.7/0.9) and constant-time repaint logic; decoupled rendering via CustomPainter ensuring minimal layout overhead.
+- `lib/main.dart`: Integrated adaptive LED gauge and synchronized speed color semantics; added dynamic scaling (_maxObservedSpeed) with gesture-based recalibration (long-press); refactored status cycle logic and consolidated metric presentation with monospace formatting for stable layout.
+- `lib/digital_clock.dart`: Time zone–aware clock using timezone + intl stacks; lightweight blink state toggling per second without retaining unnecessary timers beyond lifecycle, ensuring low rebuild diff footprint.
 
-## 2.0.1, v2 init, 2025-09-18 04:32:41, 1be3142
+## 2.0.1, v2 init, 2025-09-18 04:32:41, 6190080
 README.md
-REVISION
+TODO.md
 presentiae-v1.gif
 presentiae-v1.mov
-pubspec.yaml
-pubspec.yaml.bak
-sandbox/painter.md
+
+
