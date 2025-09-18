@@ -18,11 +18,11 @@
 - [x] Basic functionality
 - [x] World Clock
 - [x] Screensaver
-- [ ] Customizable Name / Tagline / Statuses / Colors
+- [>] SEE TODO.md FOR MORE
 
 ### How does it look like? (this GIF is terrible, I know!)
 
-![hello](./presentiae.gif)
+![hello](./presentiae-v1.gif)
 
-[Download a .mov](./presentiae.mov)
+[Download a .mov](./presentiae-v1.mov)
 

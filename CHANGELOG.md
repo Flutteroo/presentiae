@@ -83,3 +83,12 @@ windows/runner/utils.cpp
 windows/runner/utils.h
 windows/runner/win32_window.cpp
 windows/runner/win32_window.h
+
+## 2.0.1, v2 init, 2025-09-18 04:32:41, 1be3142
+README.md
+REVISION
+presentiae-v1.gif
+presentiae-v1.mov
+pubspec.yaml
+pubspec.yaml.bak
+sandbox/painter.md
